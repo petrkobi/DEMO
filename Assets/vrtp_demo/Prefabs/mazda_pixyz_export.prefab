@@ -4944,6 +4944,7 @@ GameObject:
   - component: {fileID: 4143054826755902746}
   - component: {fileID: 2528285563560991159}
   - component: {fileID: 5841653088219201965}
+  - component: {fileID: 2590444582334922454}
   m_Layer: 0
   m_Name: mazda_pixyz_export
   m_TagString: Untagged
@@ -5041,6 +5042,39 @@ MonoBehaviour:
   animator_rearLeftDoor: {fileID: 493175032}
   animator_rearRightDoor: {fileID: 916597621}
   _mazdaData: {fileID: 11400000, guid: f507db92b88b1cc44b02ac3112dddba4, type: 2}
+--- !u!114 &2590444582334922454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234170544738058558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0cf146c4c60d349a869fb2cead85ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carCaseList:
+  - {fileID: 4234170544740258098}
+  - {fileID: 4234170544740258080}
+  - {fileID: 4234170544740258106}
+  - {fileID: 4234170544740258284}
+  - {fileID: 4234170544740258278}
+  - {fileID: 4234170544740258290}
+  - {fileID: 4234170544740258092}
+  - {fileID: 4234170544740258128}
+  - {fileID: 4234170544740258048}
+  - {fileID: 4234170544740258066}
+  - {fileID: 4234170544740258132}
+  - {fileID: 4234170544740257996}
+  - {fileID: 4234170544740258034}
+  - {fileID: 4234170544740257940}
+  - {fileID: 4234170544740258148}
+  - {fileID: 4234170544740258158}
+  - {fileID: 4234170544740258240}
+  - {fileID: 4234170544740258144}
+  - {fileID: 4234170544740257938}
+  - {fileID: 4234170544740258156}
 --- !u!1 &4234170544738058560
 GameObject:
   m_ObjectHideFlags: 0

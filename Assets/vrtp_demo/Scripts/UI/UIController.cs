@@ -6,17 +6,22 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
 
+    [SerializeField] private Canvas canvas;
     [SerializeField] private Button changeColorButton;
     
-    // Start is called before the first frame update
-    void Start()
+    [Header("Window")] 
+    [SerializeField] private GameObject colorPickerWindow;
+
+    private GameObject colorPicerWindowSpawn;
+    
+    private void Start()
     {
         changeColorButton.onClick.AddListener(OnClickChangeColorButton);
     }
 
     private void OnClickChangeColorButton()
     {
-        
+       colorPicerWindowSpawn = Instantiate(colorPickerWindow, canvas.transform);
     }
 
 
