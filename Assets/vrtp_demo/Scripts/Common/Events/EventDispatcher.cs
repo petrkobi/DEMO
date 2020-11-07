@@ -1,8 +1,8 @@
 ﻿
 using System;
-using _Quiz.Scripts.Common.Events;
 using UniRx;
 using UnityEngine;
+using vrtp_demo.Scripts.Common.Events;
 
 namespace vrtp_demo.Scripts.Common.Events
 {

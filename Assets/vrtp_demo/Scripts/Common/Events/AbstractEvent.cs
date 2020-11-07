@@ -1,4 +1,4 @@
-﻿namespace _Quiz.Scripts.Common.Events
+﻿namespace vrtp_demo.Scripts.Common.Events
 {
     public class AbstractEvent
     {
