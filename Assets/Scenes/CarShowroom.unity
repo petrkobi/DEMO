@@ -121,49 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &530143229 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4234170544738058558, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
-    type: 3}
-  m_PrefabInstance: {fileID: 4234170544693724377}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &530143234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530143229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0a56d7e1593a8340a91373a978b5398, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator_frontLeftDoor: {fileID: 1266386839}
-  animator_frontRightDoor: {fileID: 0}
-  animator_rearLeftDoor: {fileID: 0}
-  animator_rearRightDoor: {fileID: 0}
-  _mazdaData: {fileID: 11400000, guid: f507db92b88b1cc44b02ac3112dddba4, type: 2}
---- !u!114 &530143235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 530143229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e24057454387e24786fe7d7aa5115cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frontLeftDoor: {fileID: 1572406242}
-  frontRightDoor: {fileID: 0}
-  rearLeftDoor: {fileID: 0}
-  rearRightDoor: {fileID: 0}
-  animator_frontLeftDoor: {fileID: 0}
-  animator_frontRightDoor: {fileID: 0}
-  animator_rearLeftDoor: {fileID: 0}
-  animator_rearRightDoor: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,18 +204,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1266386839 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1266386839, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
-    type: 3}
-  m_PrefabInstance: {fileID: 4234170544693724377}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1572406242 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 7457507592841334599, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
-    type: 3}
-  m_PrefabInstance: {fileID: 4234170544693724377}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1927079660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -539,11 +484,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7815427742634566408, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3145890525769105289, guid: 87ad90a25f8c8d64692e0ad3075c9f15, type: 3}

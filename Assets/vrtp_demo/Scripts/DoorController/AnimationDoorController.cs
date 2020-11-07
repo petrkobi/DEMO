@@ -7,7 +7,6 @@ namespace vrtp_demo.Scripts.DoorController
 {
     public class AnimationDoorController : MonoBehaviour
     {
-    
         [Header("Animators")]
         [SerializeField] private Animator animator_frontLeftDoor;
         [SerializeField] private Animator animator_frontRightDoor;

@@ -29,8 +29,6 @@ public class RaycasterDoorController : MonoBehaviour
             RaycastHit hit;
             Ray ray = cameraMain.ScreenPointToRay(Input.mousePosition);
             if ( Physics.Raycast (ray,out hit,100.0f )) {
-
-                Debug.Log("You selected the " + hit.collider.name, gameObject);
                 
                 if (hit.collider == frontLeftDoor)
                 {
