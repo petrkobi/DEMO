@@ -4945,6 +4945,7 @@ GameObject:
   - component: {fileID: 2528285563560991159}
   - component: {fileID: 5841653088219201965}
   - component: {fileID: 2590444582334922454}
+  - component: {fileID: 418379449598950414}
   m_Layer: 0
   m_Name: mazda_pixyz_export
   m_TagString: Untagged
@@ -5075,6 +5076,37 @@ MonoBehaviour:
   - {fileID: 4234170544740258144}
   - {fileID: 4234170544740257938}
   - {fileID: 4234170544740258156}
+--- !u!114 &418379449598950414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4234170544738058558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad9b5b453976744c9f2922fcb59533c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontLeftDoor: {fileID: 7457507592841334599}
+  frontRightDoor: {fileID: 3840507134981403168}
+  rearLeftDoor: {fileID: 3123200104768867860}
+  rearRightDoor: {fileID: 4947686516514142081}
+  frontLeftDoorMeshList:
+  - {fileID: 0}
+  - {fileID: 0}
+  frontRightDoorMeshList:
+  - {fileID: 0}
+  - {fileID: 0}
+  rearLeftDoorMeshList:
+  - {fileID: 0}
+  - {fileID: 0}
+  rearRightDoorMeshList:
+  - {fileID: 0}
+  - {fileID: 0}
+  activeColor: {r: 0, g: 0, b: 0, a: 0}
+  unActiveColor: {r: 0, g: 0, b: 0, a: 0}
+  _mazdaData: {fileID: 0}
 --- !u!1 &4234170544738058560
 GameObject:
   m_ObjectHideFlags: 0

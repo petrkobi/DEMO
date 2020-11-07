@@ -30,6 +30,8 @@ public class ColorPickerWindow : MonoBehaviour
         {
             ChangeColor = colorPicker.CurrentColor
         });
+
+        _mazdaData.MazdaColor = colorPicker.CurrentColor;
         
         Destroy(gameObject,0.1f);
     }

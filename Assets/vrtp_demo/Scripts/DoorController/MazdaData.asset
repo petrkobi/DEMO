@@ -16,3 +16,8 @@ MonoBehaviour:
   IsFronRightDoorOpen: 0
   IsRearLeftDoorOpen: 0
   IsRearRightDoorOpen: 0
+  MazdaColor: {r: 0.14982343, g: 0.7108425, b: 0, a: 1}
+  IsCursorOnFrontLeftDoor: 1
+  IsCursorOnFrontRighttDoor: 1
+  IsCursorOnRearLeftDoor: 0
+  IsCursorOnRearRightDoor: 0
