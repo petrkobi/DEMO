@@ -16,16 +16,8 @@ public class RaycasterDoorController : MonoBehaviour
     [SerializeField] private Collider rearLeftDoor;
     [SerializeField] private Collider rearRightDoor;
     
-    [Header("Animators")]
-    [SerializeField] private Animator animator_frontLeftDoor;
-    [SerializeField] private Animator animator_frontRightDoor;
-    [SerializeField] private Animator animator_rearLeftDoor;
-    [SerializeField] private Animator animator_rearRightDoor;
-
     private Camera cameraMain;
     
-
-    // Start is called before the first frame update
     private void Start()
     {
         cameraMain = Camera.main;
@@ -35,44 +27,40 @@ public class RaycasterDoorController : MonoBehaviour
     {
         if ( Input.GetMouseButtonDown(0)){ 
             RaycastHit hit;
-            Debug.Log("Shoot Ray");
             Ray ray = cameraMain.ScreenPointToRay(Input.mousePosition);
             if ( Physics.Raycast (ray,out hit,100.0f )) {
 
+                Debug.Log("You selected the " + hit.collider.name, gameObject);
+                
                 if (hit.collider == frontLeftDoor)
                 {
-                    
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
                         DoorName = "FRONT_LEFT_DOOR"
                     });
-                    
-                    Debug.Log("You selected the " + hit.collider.name);
-                    //if (_mazdaData.IsFrontLeftDoorOpen)
-                    {
-                        /*
-                        Debug.Log("Close");
-                        animator_frontLeftDoor.SetBool("is_FrontLeft_door_open", false);
-
-                        _mazdaData.IsFrontLeftDoorOpen = !_mazdaData.IsFrontLeftDoorOpen;
-                        */
-                    }
-                    //else
-                    {
-
-                        
-                        /*
-                        Debug.Log("Open");
-                        animator_frontLeftDoor.SetBool("is_FrontLeft_door_open", true);
-                        
-
-                        _mazdaData.IsFrontLeftDoorOpen = !_mazdaData.IsFronRightDoorOpen;
-                        */
-                    }
-                    
-                    
                 }
-
+                else if (hit.collider == frontRightDoor)
+                {
+                    EventDispatcher.Publish(new OpenDoorEvent()
+                    {
+                        DoorName = "FRONT_RIGHT_DOOR"
+                    });
+                }
+                else if (hit.collider == rearLeftDoor)
+                {
+                    EventDispatcher.Publish(new OpenDoorEvent()
+                    {
+                        DoorName = "REAR_LEFT_DOOR"
+                    });
+                }
+                else if (hit.collider == rearRightDoor)
+                {
+                    EventDispatcher.Publish(new OpenDoorEvent()
+                    {
+                        DoorName = "REAR_RIGHT_DOOR"
+                    });
+                }
+                
             }
         }
     }
