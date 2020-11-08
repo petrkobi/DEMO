@@ -23,6 +23,9 @@ namespace vrtp_demo.Scripts.UI
         
         [Space]
         [SerializeField] private CanvasGroup colorPickerGroupBtn;
+
+        [Header("Light Slider Controller")]
+        [SerializeField] private Slider lightSlider;
         
         [Header("Data")]
         [SerializeField] private WindowDataStatus _windowDataStatus;
@@ -37,6 +40,14 @@ namespace vrtp_demo.Scripts.UI
             rearLeftDoorButton.onClick.AddListener(OnClickRearLeftDoorButton);
             rearRightDoorButton.onClick.AddListener(OnClickRearRightDoorButton);
             tailDoorButton.onClick.AddListener(OnClickTailDoorButton);
+            
+            lightSlider.onValueChanged.AddListener(OnLightIntensityChangeSlider);
+            lightSlider.value = 1.0f;
+        }
+
+        private void OnLightIntensityChangeSlider(float arg0)
+        {
+            _windowDataStatus.SetValue(arg0);
         }
 
         private void OnClickTailDoorButton()

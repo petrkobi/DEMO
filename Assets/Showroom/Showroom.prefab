@@ -88,6 +88,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -99,6 +100,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 0.3
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -121,9 +123,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &7543209202741882707
 PrefabInstance:
@@ -211,12 +213,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4968113853316474623}
     m_Modifications:
-    - target: {fileID: 7198253104634591415, guid: 9b6d4e54d70c91f49b084537136c73ea,
+    - target: {fileID: 478617330588926228, guid: 9b6d4e54d70c91f49b084537136c73ea,
         type: 3}
-      propertyPath: m_Name
-      value: svetlaSetup (1)
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7198253104634591415, guid: 9b6d4e54d70c91f49b084537136c73ea,
+    - target: {fileID: 2702699223601204473, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3401989904797353566, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198253104510688652, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198253104510688654, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198253104547971316, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_Range
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198253104547971316, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198253104547971318, guid: 9b6d4e54d70c91f49b084537136c73ea,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -291,15 +323,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7198253104510688654, guid: 9b6d4e54d70c91f49b084537136c73ea,
+    - target: {fileID: 7198253104634591415, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_Name
+      value: svetlaSetup (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198253104634591415, guid: 9b6d4e54d70c91f49b084537136c73ea,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7198253104547971318, guid: 9b6d4e54d70c91f49b084537136c73ea,
+    - target: {fileID: 7198253104893642713, guid: 9b6d4e54d70c91f49b084537136c73ea,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
+      propertyPath: m_Lightmapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7198253104893642715, guid: 9b6d4e54d70c91f49b084537136c73ea,
         type: 3}
@@ -311,27 +348,32 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7198253104970878974, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_Range
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198253104970878974, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7198253105222552552, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7198253105222552554, guid: 9b6d4e54d70c91f49b084537136c73ea,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7198253105477042101, guid: 9b6d4e54d70c91f49b084537136c73ea,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7198253105477042103, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 478617330588926228, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2702699223601204473, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3401989904797353566, guid: 9b6d4e54d70c91f49b084537136c73ea,
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -350,46 +392,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198253104547971316, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_Range
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198253104547971316, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198253105222552552, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198253104893642713, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198253104970878974, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_Range
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198253104970878974, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198253104510688652, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7198253105477042101, guid: 9b6d4e54d70c91f49b084537136c73ea,
-        type: 3}
-      propertyPath: m_Lightmapping
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b6d4e54d70c91f49b084537136c73ea, type: 3}

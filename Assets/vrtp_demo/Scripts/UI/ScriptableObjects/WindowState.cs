@@ -13,5 +13,19 @@ namespace vrtp_demo.Scripts.UI
         }
 
         public WindowStatus Window;
+
+
+        public delegate void OnChangeDelegate(float value);
+        public event OnChangeDelegate OnChange;
+        public float lightIntensity;
+
+        public void SetValue(float newValue)
+        {
+            lightIntensity = newValue;
+            if (OnChange != null)
+            {
+                OnChange(lightIntensity);
+            }
+        }
     }
 }
