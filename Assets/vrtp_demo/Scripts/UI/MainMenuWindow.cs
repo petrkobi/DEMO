@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEditor.U2D;
+using UnityEngine;
 using UnityEngine.UI;
 using vrtp_demo.Scripts.Common.Events;
 using vrtp_demo.Scripts.DoorController;
@@ -10,21 +12,20 @@ namespace vrtp_demo.Scripts.UI
     {
 
         [SerializeField] private Button colorPickerWindow;
+        [SerializeField] private CanvasGroup colorPickerGroupBtn;
         
         [Header("Data")]
         [SerializeField] private WindowDataStatus _windowDataStatus;
+
         
-        // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             colorPickerWindow.onClick.AddListener(OnClickColorPickerButton);
         }
 
         private void OnClickColorPickerButton()
         {
-            //EventDispatcher.Publish(new RequestFadeInEvent());
             EventDispatcher.Publish(new RequestColorPickerWindowEvent());
-            
             Destroy(gameObject);
         }
 
@@ -32,7 +33,9 @@ namespace vrtp_demo.Scripts.UI
         {
             gameObject.transform.SetAsFirstSibling();
             _windowDataStatus.Window = WindowDataStatus.WindowStatus.MainView;
+            colorPickerGroupBtn.alpha = 0;
             
+            colorPickerGroupBtn.DOFade(1, 1f);
         }
     }
 }

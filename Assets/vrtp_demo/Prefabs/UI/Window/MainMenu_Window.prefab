@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorPickerWindow: {fileID: 7522806600171846700}
+  colorPickerGroupBtn: {fileID: 9197777374549311049}
   _windowDataStatus: {fileID: 11400000, guid: eea320209696fc54e80cd3e7cf3c975e, type: 2}
 --- !u!1001 &6019776646771423718
 PrefabInstance:
@@ -252,3 +253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &9197777374549311049 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 3183934148391880623, guid: f5046a8602ead584996a1eab278eac1c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6019776646771423718}
+  m_PrefabAsset: {fileID: 0}

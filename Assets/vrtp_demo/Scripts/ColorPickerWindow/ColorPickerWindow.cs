@@ -45,6 +45,7 @@ public class ColorPickerWindow : MonoBehaviour
 
         _mazdaData.MazdaColor = colorPicker.CurrentColor;
 
+        colorPicker.gameObject.SetActive(false);
         //gameObject.transform.DOScale(new Vector3(0,0,0),0.5f).OnComplete(OnColorPickerWindowClosed);
         backgroundImage.DOColor(new Color(0, 0, 0, 0.0f), 0.3f).OnComplete(OnColorPickerWindowClosed);
     }

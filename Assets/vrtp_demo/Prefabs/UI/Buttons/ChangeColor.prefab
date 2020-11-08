@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 4318083744658955850}
   - component: {fileID: 4318083744665978316}
   - component: {fileID: 4318083744665978314}
+  - component: {fileID: 3183934148391880623}
   m_Layer: 5
   m_Name: ChangeColor
   m_TagString: Untagged
@@ -275,3 +276,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!225 &3183934148391880623
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318083744672765610}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

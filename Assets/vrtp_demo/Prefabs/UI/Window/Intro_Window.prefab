@@ -373,7 +373,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -396,9 +396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enterMainViewButton: {fileID: 8623430549791037051}
+  introWindowCanvasGroup: {fileID: 3453603396053182968}
   infoMessage: {fileID: 5061162830043422890}
   virtuplexLogo: {fileID: 6504654642002553694}
-  fadeOutImage: {fileID: 6647810566123164411}
   _windowDataStatus: {fileID: 11400000, guid: eea320209696fc54e80cd3e7cf3c975e, type: 2}
 --- !u!1001 &5006450626444038114
 PrefabInstance:
@@ -470,7 +470,7 @@ PrefabInstance:
     - target: {fileID: 3663370659880857945, guid: 551d12f1e13750945998b4fbe2e231eb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -322
+      value: -260
       objectReference: {fileID: 0}
     - target: {fileID: 3663370659880857945, guid: 551d12f1e13750945998b4fbe2e231eb,
         type: 3}
@@ -562,3 +562,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!225 &3453603396053182968 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 7680842625933354522, guid: 551d12f1e13750945998b4fbe2e231eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 5006450626444038114}
+  m_PrefabAsset: {fileID: 0}
