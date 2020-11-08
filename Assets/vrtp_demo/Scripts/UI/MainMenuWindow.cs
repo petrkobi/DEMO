@@ -55,7 +55,7 @@ namespace vrtp_demo.Scripts.UI
             EventDispatcher.Publish(new OpenDoorEvent()
             {
                 DoorName = "TAIL_DOOR"
-            });
+            }, true);
         }
 
         private void OnClickRearRightDoorButton()
@@ -63,7 +63,7 @@ namespace vrtp_demo.Scripts.UI
             EventDispatcher.Publish(new OpenDoorEvent()
             {
                 DoorName = "REAR_RIGHT_DOOR"
-            });
+            }, true);
         }
 
         private void OnClickRearLeftDoorButton()
@@ -71,7 +71,7 @@ namespace vrtp_demo.Scripts.UI
             EventDispatcher.Publish(new OpenDoorEvent()
             {
                 DoorName = "REAR_LEFT_DOOR"
-            });
+            }, true);
         }
 
         private void OnClickFrontRightDoorButton()
@@ -79,7 +79,7 @@ namespace vrtp_demo.Scripts.UI
             EventDispatcher.Publish(new OpenDoorEvent()
             {
                 DoorName = "FRONT_RIGHT_DOOR"
-            });
+            }, true);
         }
 
         private void OnClickFrontLeftDoorButton()
@@ -87,7 +87,7 @@ namespace vrtp_demo.Scripts.UI
            EventDispatcher.Publish(new OpenDoorEvent()
            {
                DoorName = "FRONT_LEFT_DOOR"
-           });
+           }, true);
         }
 
         private void OnClickColorPickerButton()

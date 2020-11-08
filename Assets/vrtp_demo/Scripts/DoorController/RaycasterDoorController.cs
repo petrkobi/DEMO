@@ -74,7 +74,6 @@ public class RaycasterDoorController : MonoBehaviour
                 }
                 else if (hit.collider == tailDoor)
                 {
-                    Debug.Log("tail door");
                     if (!_mazdaData.IsCursorOnTailDoor) return;
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
@@ -83,7 +82,9 @@ public class RaycasterDoorController : MonoBehaviour
                 }
                 else
                 {
+                    #if UNITY_EDITOR
                     Debug.Log(hit.collider.name, gameObject);
+                    #endif
                 }
                 
             }
