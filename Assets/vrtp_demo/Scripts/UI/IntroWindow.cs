@@ -41,8 +41,8 @@ namespace vrtp_demo.Scripts.UI
     
         private void OnClickEnterMainViewButton()
         {
-            EventDispatcher.Publish(new RequestFadeInAndOutEvent());
-            EventDispatcher.Publish(new RequestMainWindowEvent());
+            EventDispatcher.Publish(new RequestFadeInAndOutEvent(),false);
+            EventDispatcher.Publish(new RequestMainWindowEvent(),false);
             Destroy(gameObject,0.5f);
         }
     }

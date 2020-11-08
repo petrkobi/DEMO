@@ -11,7 +11,6 @@ public class LightController : MonoBehaviour
     [Header("Data")]
     [SerializeField] private WindowDataStatus _windowDataStatus;
     
-    // Start is called before the first frame update
     private void Start()
     {
         _windowDataStatus.OnChange += WindowDataStatusOnChange;
