@@ -1,6 +1,8 @@
-﻿namespace vrtp_demo.Scripts.UI.Events
+﻿using vrtp_demo.Scripts.Common.Events;
+
+namespace vrtp_demo.Scripts.UI.Events
 {
-    public class RequestColorPickerWindowEvent
+    public class RequestColorPickerWindowEvent : AbstractEvent
     {
         
     }

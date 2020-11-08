@@ -1,4 +1,9 @@
-﻿$HEADER$namespace $NAMESPACE$
+﻿using vrtp_demo.Scripts.Common.Events;
+
+namespace vrtp_demo.Scripts.UI.Events
 {
-  public class $CLASS$ {$END$}
+    public class RequestFadeInEvent : AbstractEvent
+    {
+        
+    }
 }

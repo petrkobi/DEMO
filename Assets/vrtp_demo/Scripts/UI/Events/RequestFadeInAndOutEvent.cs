@@ -2,7 +2,7 @@
 
 namespace vrtp_demo.Scripts.UI.Events
 {
-    public class RequestFadeEvent : AbstractEvent
+    public class RequestFadeInAndOutEvent : AbstractEvent
     {
         
     }

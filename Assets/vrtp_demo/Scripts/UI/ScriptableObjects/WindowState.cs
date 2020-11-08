@@ -7,6 +7,7 @@ namespace vrtp_demo.Scripts.UI
     {
         public enum WindowStatus
         {
+            Intro,
             MainView,
             ColorPickerWindow
         }

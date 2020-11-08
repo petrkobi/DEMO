@@ -399,7 +399,7 @@ MonoBehaviour:
   infoMessage: {fileID: 5061162830043422890}
   virtuplexLogo: {fileID: 6504654642002553694}
   fadeOutImage: {fileID: 6647810566123164411}
-  canvasGroup: {fileID: 0}
+  _windowDataStatus: {fileID: 11400000, guid: eea320209696fc54e80cd3e7cf3c975e, type: 2}
 --- !u!1001 &5006450626444038114
 PrefabInstance:
   m_ObjectHideFlags: 0
