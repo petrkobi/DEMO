@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 using vrtp_demo.Scripts.DoorController;
 using UniRx;
 using UnityEditor.U2D;
+using vrtp_demo.Scripts;
 using vrtp_demo.Scripts.DoorController.Events;
 using vrtp_demo.Scripts.UI;
 using EventDispatcher = vrtp_demo.Scripts.Common.Events.EventDispatcher;
@@ -45,7 +46,7 @@ public class RaycasterDoorController : MonoBehaviour
                     if (!_mazdaData.IsCursorOnFrontLeftDoor) return;
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
-                        DoorName = "FRONT_LEFT_DOOR"
+                        DoorName = Constants.FRONT_LEFT_DOOR
                     }, false);
                 }
                 else if (hit.collider == frontRightDoor)
@@ -53,7 +54,7 @@ public class RaycasterDoorController : MonoBehaviour
                     if (!_mazdaData.IsCursorOnFrontRightDoor) return;
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
-                        DoorName = "FRONT_RIGHT_DOOR"
+                        DoorName = Constants.FRONT_RIGHT_DOOR
                     }, false);
                 }
                 else if (hit.collider == rearLeftDoor)
@@ -61,7 +62,7 @@ public class RaycasterDoorController : MonoBehaviour
                     if (!_mazdaData.IsCursorOnRearLeftDoor) return;
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
-                        DoorName = "REAR_LEFT_DOOR"
+                        DoorName = Constants.REAR_LEFT_DOOR
                     }, false);
                 }
                 else if (hit.collider == rearRightDoor)
@@ -69,21 +70,21 @@ public class RaycasterDoorController : MonoBehaviour
                     if (!_mazdaData.IsCursorOnRearRightDoor) return;
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
-                        DoorName = "REAR_RIGHT_DOOR"
-                    }, true);
+                        DoorName = Constants.REAR_RIGHT_DOOR
+                    }, false);
                 }
                 else if (hit.collider == tailDoor)
                 {
                     if (!_mazdaData.IsCursorOnTailDoor) return;
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
-                        DoorName = "TAIL_DOOR"
-                    }, true);
+                        DoorName = Constants.TAIL_DOOR
+                    }, false);
                 }
                 else
                 {
                     #if UNITY_EDITOR
-                    Debug.Log(hit.collider.name, gameObject);
+                    Debug.LogError("Editor debug only: " + hit.collider.name, gameObject);
                     #endif
                 }
                 

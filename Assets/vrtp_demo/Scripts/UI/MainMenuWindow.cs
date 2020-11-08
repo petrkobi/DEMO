@@ -54,40 +54,40 @@ namespace vrtp_demo.Scripts.UI
         {
             EventDispatcher.Publish(new OpenDoorEvent()
             {
-                DoorName = "TAIL_DOOR"
-            }, true);
+                DoorName = Constants.TAIL_DOOR
+            }, false);
         }
 
         private void OnClickRearRightDoorButton()
         {
             EventDispatcher.Publish(new OpenDoorEvent()
             {
-                DoorName = "REAR_RIGHT_DOOR"
-            }, true);
+                DoorName = Constants.REAR_RIGHT_DOOR
+            }, false);
         }
 
         private void OnClickRearLeftDoorButton()
         {
             EventDispatcher.Publish(new OpenDoorEvent()
             {
-                DoorName = "REAR_LEFT_DOOR"
-            }, true);
+                DoorName = Constants.REAR_LEFT_DOOR
+            }, false);
         }
 
         private void OnClickFrontRightDoorButton()
         {
             EventDispatcher.Publish(new OpenDoorEvent()
             {
-                DoorName = "FRONT_RIGHT_DOOR"
-            }, true);
+                DoorName = Constants.FRONT_RIGHT_DOOR
+            }, false);
         }
 
         private void OnClickFrontLeftDoorButton()
         {
            EventDispatcher.Publish(new OpenDoorEvent()
            {
-               DoorName = "FRONT_LEFT_DOOR"
-           }, true);
+               DoorName = Constants.FRONT_LEFT_DOOR
+           }, false);
         }
 
         private void OnClickColorPickerButton()

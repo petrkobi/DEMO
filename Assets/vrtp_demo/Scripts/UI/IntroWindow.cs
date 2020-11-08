@@ -13,10 +13,6 @@ namespace vrtp_demo.Scripts.UI
 
         [SerializeField] 
         private Button enterMainViewButton;
-
-        [SerializeField]
-        private CanvasGroup introWindowCanvasGroup;
-    
         [SerializeField] 
         private TextMeshProUGUI infoMessage;
         [SerializeField] 
