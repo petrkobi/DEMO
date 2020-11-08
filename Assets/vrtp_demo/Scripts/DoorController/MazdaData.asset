@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 942f22a44f50c8e4f9c61829eef86757, type: 3}
   m_Name: MazdaData
   m_EditorClassIdentifier: 
-  IsFrontLeftDoorOpen: 0
-  IsFronRightDoorOpen: 0
+  IsFrontLeftDoorOpen: 1
+  IsFronRightDoorOpen: 1
   IsRearLeftDoorOpen: 0
   IsRearRightDoorOpen: 0
-  MazdaColor: {r: 0.14982343, g: 0.7108425, b: 0, a: 1}
-  IsCursorOnFrontLeftDoor: 1
-  IsCursorOnFrontRighttDoor: 1
+  MazdaColor: {r: 0.9022442, g: 0.13239776, b: 0.48559815, a: 1}
+  IsCursorOnFrontLeftDoor: 0
+  IsCursorOnFrontRightDoor: 0
   IsCursorOnRearLeftDoor: 0
   IsCursorOnRearRightDoor: 0

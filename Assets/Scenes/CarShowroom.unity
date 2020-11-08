@@ -1859,12 +1859,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 418379449598950414, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
         type: 3}
-      propertyPath: _mazdaData
-      value: 
-      objectReference: {fileID: 11400000, guid: f507db92b88b1cc44b02ac3112dddba4,
-        type: 2}
-    - target: {fileID: 418379449598950414, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
-        type: 3}
       propertyPath: frontLeftDoorMeshList.Array.data[0]
       value: 
       objectReference: {fileID: 140664016}

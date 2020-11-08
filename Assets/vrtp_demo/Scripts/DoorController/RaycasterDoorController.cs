@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using vrtp_demo.Scripts.DoorController;
 using UniRx;
+using UnityEditor.U2D;
 using vrtp_demo.Scripts.DoorController.Events;
 using vrtp_demo.Scripts.UI;
 using EventDispatcher = vrtp_demo.Scripts.Common.Events.EventDispatcher;
@@ -19,6 +20,7 @@ public class RaycasterDoorController : MonoBehaviour
 
     [Header("Data")]
     [SerializeField] private WindowDataStatus _windowDataStatus;
+    [SerializeField] private MazdaData _mazdaData;
 
     private Camera cameraMain;
     
@@ -39,6 +41,7 @@ public class RaycasterDoorController : MonoBehaviour
                 
                 if (hit.collider == frontLeftDoor)
                 {
+                    if (!_mazdaData.IsCursorOnFrontLeftDoor) return;
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
                         DoorName = "FRONT_LEFT_DOOR"
@@ -46,6 +49,7 @@ public class RaycasterDoorController : MonoBehaviour
                 }
                 else if (hit.collider == frontRightDoor)
                 {
+                    if (!_mazdaData.IsCursorOnFrontRightDoor) return;
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
                         DoorName = "FRONT_RIGHT_DOOR"
@@ -53,6 +57,7 @@ public class RaycasterDoorController : MonoBehaviour
                 }
                 else if (hit.collider == rearLeftDoor)
                 {
+                    if (!_mazdaData.IsCursorOnRearLeftDoor) return;
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
                         DoorName = "REAR_LEFT_DOOR"
@@ -60,6 +65,7 @@ public class RaycasterDoorController : MonoBehaviour
                 }
                 else if (hit.collider == rearRightDoor)
                 {
+                    if (!_mazdaData.IsCursorOnRearRightDoor) return;
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
                         DoorName = "REAR_RIGHT_DOOR"

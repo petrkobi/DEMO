@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8856574515586916660}
   - component: {fileID: 536391804509509838}
   - component: {fileID: 2763899428742982024}
+  - component: {fileID: 5391710690726996531}
   m_Layer: 5
   m_Name: ColorPicker_Window
   m_TagString: Untagged
@@ -90,8 +91,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorPicker: {fileID: 7534508203479848505}
   saveColorButton: {fileID: 7534508204413980434}
+  canvasGroup: {fileID: 5391710690726996531}
   _mazdaData: {fileID: 11400000, guid: f507db92b88b1cc44b02ac3112dddba4, type: 2}
   _windowDataStatus: {fileID: 11400000, guid: eea320209696fc54e80cd3e7cf3c975e, type: 2}
+--- !u!225 &5391710690726996531
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7672732365239328414}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &2266341862545409113
 PrefabInstance:
   m_ObjectHideFlags: 0

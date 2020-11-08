@@ -5028,6 +5028,7 @@ MonoBehaviour:
   rearLeftDoor: {fileID: 3123200104768867860}
   rearRightDoor: {fileID: 4947686516514142081}
   _windowDataStatus: {fileID: 11400000, guid: eea320209696fc54e80cd3e7cf3c975e, type: 2}
+  _mazdaData: {fileID: 11400000, guid: f507db92b88b1cc44b02ac3112dddba4, type: 2}
 --- !u!114 &5841653088219201965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5108,7 +5109,9 @@ MonoBehaviour:
   - {fileID: 0}
   activeColor: {r: 0.24827407, g: 0.8584906, b: 0.16602883, a: 1}
   unActiveColor: {r: 0, g: 0, b: 0, a: 0}
-  _mazdaData: {fileID: 0}
+  _mazdaData: {fileID: 11400000, guid: f507db92b88b1cc44b02ac3112dddba4, type: 2}
+  _windowDataStatus: {fileID: 11400000, guid: eea320209696fc54e80cd3e7cf3c975e, type: 2}
+  hitCount: 0
 --- !u!1 &4234170544738058560
 GameObject:
   m_ObjectHideFlags: 0

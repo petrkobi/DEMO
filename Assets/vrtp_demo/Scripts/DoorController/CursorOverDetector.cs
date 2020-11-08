@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UniRx;
+using UnityEditor.U2D;
 using UnityEngine;
 using UnityFx.Outline;
 using vrtp_demo.Scripts.DoorController;
+using vrtp_demo.Scripts.UI;
 
 public class CursorOverDetector : MonoBehaviour
 {
@@ -27,18 +29,48 @@ public class CursorOverDetector : MonoBehaviour
     [SerializeField] private Color unActiveColor;
 
 
-    [Header("Data")] [SerializeField] private MazdaData _mazdaData;
+    [Header("Data")] 
+    [SerializeField] private MazdaData _mazdaData;
+    [SerializeField] private WindowDataStatus _windowDataStatus;
+
+    private Transform hit1;
+    private Transform hit2;
+
+    public int hitCount;
     
     void Start()
     {
-       //Observable.Interval(TimeSpan.FromSeconds(0.5))
-       Observable.IntervalFrame(30)
+       Observable.Interval(TimeSpan.FromSeconds(0.5))
+       //Observable.IntervalFrame(30)
            .Subscribe(_ =>
             {
                 RaycastHit hit;
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit, 100.0f))
                 {
+                    if (_windowDataStatus.Window == WindowDataStatus.WindowStatus.ColorPickerWindow) return;
+                    
+                    hitCount++;
+                    if (hitCount % 2 == 0)
+                    {
+                        hit1 = hit.collider.transform;
+                    }
+                    else
+                    {
+                        hit2 = hit.collider.transform;
+                    }
+
+                    //both Rays on same Collider?
+                    if (hit1 != hit2)
+                    {
+                        _mazdaData.IsCursorOnFrontLeftDoor = false;
+                        _mazdaData.IsCursorOnFrontRightDoor = false;
+                        _mazdaData.IsCursorOnRearRightDoor = false;
+                        _mazdaData.IsCursorOnRearLeftDoor = false;
+                        
+                        return;
+                    }
+                    
                     if (hit.collider == frontLeftDoor)
                     {
                         _mazdaData.IsCursorOnFrontLeftDoor = true;
@@ -53,13 +85,13 @@ public class CursorOverDetector : MonoBehaviour
                     
                     if (hit.collider == frontRightDoor)
                     {
-                        _mazdaData.IsCursorOnFrontRighttDoor = true;
+                        _mazdaData.IsCursorOnFrontRightDoor = true;
                         SetColorToObject(frontRightDoorMeshList, activeColor);
 
                     }
                     else
                     {
-                        _mazdaData.IsCursorOnFrontLeftDoor = false;
+                        _mazdaData.IsCursorOnFrontRightDoor = false;
                         SetColorToObject(frontRightDoorMeshList, unActiveColor);
 
                     }
@@ -72,7 +104,7 @@ public class CursorOverDetector : MonoBehaviour
                     }
                     else
                     {
-                        _mazdaData.IsCursorOnRearRightDoor = false;
+                        _mazdaData.IsCursorOnRearLeftDoor = false;
                         SetColorToObject(rearLeftDoorMeshList, unActiveColor);
                     }
                     
@@ -90,6 +122,15 @@ public class CursorOverDetector : MonoBehaviour
                 }
                 else
                 {
+
+                    hit1 = null;
+                    hit2 = null;
+
+                    _mazdaData.IsCursorOnFrontLeftDoor = false;
+                    _mazdaData.IsCursorOnFrontRightDoor = false;
+                    _mazdaData.IsCursorOnRearRightDoor = false;
+                    _mazdaData.IsCursorOnRearLeftDoor = false;
+                    
                     SetColorToObject(frontLeftDoorMeshList, unActiveColor);
                     SetColorToObject(frontRightDoorMeshList, unActiveColor);
                     SetColorToObject(rearLeftDoorMeshList, unActiveColor);

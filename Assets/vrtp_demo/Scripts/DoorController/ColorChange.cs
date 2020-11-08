@@ -10,8 +10,8 @@ public class ColorChange : MonoBehaviour
 {
 
     [SerializeField] private List<MeshRenderer> carCaseList = new List<MeshRenderer>();
-    // Start is called before the first frame update
-    void Start()
+    
+    private void Start()
     {
         EventDispatcher.Receive<ChangeColorEvent>()
             .Subscribe(e =>
@@ -21,11 +21,5 @@ public class ColorChange : MonoBehaviour
                     part.material.color = e.ChangeColor;
                 }
             });
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
