@@ -1,6 +1,7 @@
 ﻿using UniRx;
 using UnityEngine;
 using vrtp_demo.Scripts.DoorController.Events;
+using vrtp_demo.Sounds.Events;
 using EventDispatcher = vrtp_demo.Scripts.Common.Events.EventDispatcher;
 
 namespace vrtp_demo.Scripts.DoorController
@@ -30,10 +31,12 @@ namespace vrtp_demo.Scripts.DoorController
                     if (_mazdaData.IsFrontLeftDoorOpen)
                     {
                         animator_frontLeftDoor.SetBool(Constants.ANIMATOR_FRONT_LEFT_DOOR_OPEN, false);
+                        EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = false }, false);
                     }
                     else
                     {
                         animator_frontLeftDoor.SetBool(Constants.ANIMATOR_FRONT_LEFT_DOOR_OPEN, true);
+                        EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = true },false);
                     }
                     _mazdaData.IsFrontLeftDoorOpen = !_mazdaData.IsFrontLeftDoorOpen;
                     break;
@@ -41,10 +44,12 @@ namespace vrtp_demo.Scripts.DoorController
                     if (_mazdaData.IsFronRightDoorOpen)
                     {
                         animator_frontRightDoor.SetBool(Constants.ANIMATOR_FRONT_RIGHT_DOOR_OPEN, false);
+                        EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = false },false);
                     }
                     else
                     {
                         animator_frontRightDoor.SetBool(Constants.ANIMATOR_FRONT_RIGHT_DOOR_OPEN, true);
+                        EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = true },false);
                     }
                     _mazdaData.IsFronRightDoorOpen = !_mazdaData.IsFronRightDoorOpen;
                     break;
@@ -52,10 +57,12 @@ namespace vrtp_demo.Scripts.DoorController
                     if (_mazdaData.IsRearLeftDoorOpen)
                     {
                         animator_rearLeftDoor.SetBool(Constants.ANIMATOR_REAR_LEFT_DOOR_OPEN, false);
+                        EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = false },false);
                     }
                     else
                     {
                         animator_rearLeftDoor.SetBool(Constants.ANIMATOR_REAR_LEFT_DOOR_OPEN, true);
+                        EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = true },false);
                     }
                     _mazdaData.IsRearLeftDoorOpen = !_mazdaData.IsRearLeftDoorOpen;
                     break;
@@ -63,10 +70,12 @@ namespace vrtp_demo.Scripts.DoorController
                     if (_mazdaData.IsRearRightDoorOpen)
                     {
                         animator_rearRightDoor.SetBool(Constants.ANIMATOR_REAR_RIGHT_DOOR_OPEN, false);
+                        EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = false },false);
                     }
                     else
                     {
                         animator_rearRightDoor.SetBool(Constants.ANIMATOR_REAR_RIGHT_DOOR_OPEN, true);
+                        EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = true },false);
                     }
                     _mazdaData.IsRearRightDoorOpen = !_mazdaData.IsRearRightDoorOpen;
                     break;
@@ -74,10 +83,12 @@ namespace vrtp_demo.Scripts.DoorController
                     if (_mazdaData.IsTailDoorOpen)
                     {
                         animator_tailDoor.SetBool(Constants.ANIMTOAR_TAIL_DOOR_OPEN, false);
+                        EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = false },false);
                     }
                     else
                     {
                         animator_tailDoor.SetBool(Constants.ANIMTOAR_TAIL_DOOR_OPEN, true);
+                        EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = true },false);
                     }
                     _mazdaData.IsTailDoorOpen = !_mazdaData.IsTailDoorOpen;
                     break;

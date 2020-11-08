@@ -91,7 +91,7 @@ namespace vrtp_demo.Scripts.UI
 
         private void OnClickColorPickerButton()
         {
-            EventDispatcher.Publish(new RequestColorPickerWindowEvent());
+            EventDispatcher.Publish(new RequestColorPickerWindowEvent(), false);
             Destroy(gameObject);
         }
 

@@ -29,8 +29,7 @@ namespace vrtp_demo.Scripts.DoorController
         private void Update()
         {
             if ( Input.GetMouseButtonDown(0))
-            { 
-                //if (_windowDataStatus.WindowStatus == Constants.WindowStatusColorPicker) return;
+            {
                 if (_windowDataStatus.Window == WindowDataStatus.WindowStatus.ColorPickerWindow) return;
             
                 RaycastHit hit;
@@ -79,9 +78,9 @@ namespace vrtp_demo.Scripts.DoorController
                     }
                     else
                     {
-#if UNITY_EDITOR
-                        Debug.LogError("Editor debug only: " + hit.collider.name, gameObject);
-#endif
+                    #if UNITY_EDITOR
+                        //Debug.LogError("Editor debug only: " + hit.collider.name, gameObject);
+                    #endif
                     }
                 
                 }
