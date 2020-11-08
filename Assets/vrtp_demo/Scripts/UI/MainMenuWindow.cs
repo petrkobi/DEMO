@@ -4,14 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using vrtp_demo.Scripts.Common.Events;
 using vrtp_demo.Scripts.DoorController;
+using vrtp_demo.Scripts.DoorController.Events;
 using vrtp_demo.Scripts.UI.Events;
 
 namespace vrtp_demo.Scripts.UI
 {
     public class MainMenuWindow : MonoBehaviour
     {
-
+        [Header("Color Picker Button")]
         [SerializeField] private Button colorPickerWindow;
+        
+        [Header("Door Buttons")]
+        [SerializeField] private Button frontLeftDoorButton;
+        [SerializeField] private Button frontRightDoorButton;
+        [SerializeField] private Button rearLeftDoorButton;
+        [SerializeField] private Button rearRightDoorButton;
+        
         [SerializeField] private CanvasGroup colorPickerGroupBtn;
         
         [Header("Data")]
@@ -21,6 +29,43 @@ namespace vrtp_demo.Scripts.UI
         private void Start()
         {
             colorPickerWindow.onClick.AddListener(OnClickColorPickerButton);
+            
+            frontLeftDoorButton.onClick.AddListener(OnClickFrontLeftDoorButton);
+            frontRightDoorButton.onClick.AddListener(OnClickFrontRightDoorButton);
+            rearLeftDoorButton.onClick.AddListener(OnClickRearLeftDoorButton);
+            rearRightDoorButton.onClick.AddListener(OnClickRearRightDoorButton);
+        }
+
+        private void OnClickRearRightDoorButton()
+        {
+            EventDispatcher.Publish(new OpenDoorEvent()
+            {
+                DoorName = "REAR_RIGHT_DOOR"
+            });
+        }
+
+        private void OnClickRearLeftDoorButton()
+        {
+            EventDispatcher.Publish(new OpenDoorEvent()
+            {
+                DoorName = "REAR_LEFT_DOOR"
+            });
+        }
+
+        private void OnClickFrontRightDoorButton()
+        {
+            EventDispatcher.Publish(new OpenDoorEvent()
+            {
+                DoorName = "FRONT_RIGHT_DOOR"
+            });
+        }
+
+        private void OnClickFrontLeftDoorButton()
+        {
+           EventDispatcher.Publish(new OpenDoorEvent()
+           {
+               DoorName = "FRONT_LEFT_DOOR"
+           });
         }
 
         private void OnClickColorPickerButton()
