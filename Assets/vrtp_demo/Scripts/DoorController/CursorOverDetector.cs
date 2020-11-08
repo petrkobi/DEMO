@@ -16,6 +16,7 @@ public class CursorOverDetector : MonoBehaviour
     [SerializeField] private Collider frontRightDoor;
     [SerializeField] private Collider rearLeftDoor;
     [SerializeField] private Collider rearRightDoor;
+    [SerializeField] private Collider tailDoor;
     
     
     [Header("MeshObject")]
@@ -23,6 +24,7 @@ public class CursorOverDetector : MonoBehaviour
     [SerializeField] private List<OutlineBehaviour> frontRightDoorMeshList = new List<OutlineBehaviour>();
     [SerializeField] private List<OutlineBehaviour> rearLeftDoorMeshList = new List<OutlineBehaviour>();
     [SerializeField] private List<OutlineBehaviour> rearRightDoorMeshList = new List<OutlineBehaviour>();
+    [SerializeField] private List<OutlineBehaviour> tailDoorMeshList = new List<OutlineBehaviour>();
 
     [Header("Colors")]
     [SerializeField] private Color activeColor;
@@ -67,6 +69,7 @@ public class CursorOverDetector : MonoBehaviour
                         _mazdaData.IsCursorOnFrontRightDoor = false;
                         _mazdaData.IsCursorOnRearRightDoor = false;
                         _mazdaData.IsCursorOnRearLeftDoor = false;
+                        _mazdaData.IsCursorOnTailDoor = false;
                         
                         return;
                     }
@@ -119,6 +122,18 @@ public class CursorOverDetector : MonoBehaviour
                         _mazdaData.IsCursorOnRearRightDoor = false;
                         SetColorToObject(rearRightDoorMeshList, unActiveColor);
                     }
+
+                    
+                    if (hit.collider == tailDoor)
+                    {
+                        _mazdaData.IsCursorOnTailDoor = true;
+                        SetColorToObject(tailDoorMeshList, activeColor);
+                    }
+                    else
+                    {
+                        _mazdaData.IsCursorOnTailDoor = false;
+                        SetColorToObject(tailDoorMeshList, unActiveColor);
+                    }
                 }
                 else
                 {
@@ -130,11 +145,14 @@ public class CursorOverDetector : MonoBehaviour
                     _mazdaData.IsCursorOnFrontRightDoor = false;
                     _mazdaData.IsCursorOnRearRightDoor = false;
                     _mazdaData.IsCursorOnRearLeftDoor = false;
+                    _mazdaData.IsCursorOnTailDoor = false;
                     
                     SetColorToObject(frontLeftDoorMeshList, unActiveColor);
                     SetColorToObject(frontRightDoorMeshList, unActiveColor);
                     SetColorToObject(rearLeftDoorMeshList, unActiveColor);
                     SetColorToObject(rearRightDoorMeshList, unActiveColor);
+                    SetColorToObject(tailDoorMeshList, unActiveColor);
+                    
                 }
             });
 

@@ -19,7 +19,9 @@ namespace vrtp_demo.Scripts.UI
         [SerializeField] private Button frontRightDoorButton;
         [SerializeField] private Button rearLeftDoorButton;
         [SerializeField] private Button rearRightDoorButton;
+        [SerializeField] private Button tailDoorButton;
         
+        [Space]
         [SerializeField] private CanvasGroup colorPickerGroupBtn;
         
         [Header("Data")]
@@ -34,6 +36,15 @@ namespace vrtp_demo.Scripts.UI
             frontRightDoorButton.onClick.AddListener(OnClickFrontRightDoorButton);
             rearLeftDoorButton.onClick.AddListener(OnClickRearLeftDoorButton);
             rearRightDoorButton.onClick.AddListener(OnClickRearRightDoorButton);
+            tailDoorButton.onClick.AddListener(OnClickTailDoorButton);
+        }
+
+        private void OnClickTailDoorButton()
+        {
+            EventDispatcher.Publish(new OpenDoorEvent()
+            {
+                DoorName = "TAIL_DOOR"
+            });
         }
 
         private void OnClickRearRightDoorButton()

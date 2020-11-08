@@ -12,6 +12,7 @@ namespace vrtp_demo.Scripts.DoorController
         [SerializeField] private Animator animator_frontRightDoor;
         [SerializeField] private Animator animator_rearLeftDoor;
         [SerializeField] private Animator animator_rearRightDoor;
+        [SerializeField] private Animator animator_tailDoor;
     
         [Header("Data")]
         [SerializeField] private MazdaData _mazdaData;
@@ -69,6 +70,18 @@ namespace vrtp_demo.Scripts.DoorController
                     }
                     _mazdaData.IsRearRightDoorOpen = !_mazdaData.IsRearRightDoorOpen;
                     break;
+                case "TAIL_DOOR":
+                    if (_mazdaData.IsTailDoorOpen)
+                    {
+                        animator_tailDoor.SetBool("is_Tail_door_open", false);
+                    }
+                    else
+                    {
+                        animator_tailDoor.SetBool("is_Tail_door_open", true);
+                    }
+                    _mazdaData.IsTailDoorOpen = !_mazdaData.IsTailDoorOpen;
+                    break;
+                
                 default:
                     Debug.LogError("Default - Unknown state: " + e.DoorName);
                     break;

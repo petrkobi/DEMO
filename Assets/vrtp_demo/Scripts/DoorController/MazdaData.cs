@@ -9,6 +9,7 @@ namespace vrtp_demo.Scripts.DoorController
         public bool IsFronRightDoorOpen;
         public bool IsRearLeftDoorOpen;
         public bool IsRearRightDoorOpen;
+        public bool IsTailDoorOpen;
 
         public Color MazdaColor;
 
@@ -16,5 +17,7 @@ namespace vrtp_demo.Scripts.DoorController
         public bool IsCursorOnFrontRightDoor;
         public bool IsCursorOnRearLeftDoor;
         public bool IsCursorOnRearRightDoor;
+        public bool IsCursorOnTailDoor;
+
     }
 }

@@ -17,6 +17,7 @@ public class RaycasterDoorController : MonoBehaviour
     [SerializeField] private Collider frontRightDoor;
     [SerializeField] private Collider rearLeftDoor;
     [SerializeField] private Collider rearRightDoor;
+    [SerializeField] private Collider tailDoor;
 
     [Header("Data")]
     [SerializeField] private WindowDataStatus _windowDataStatus;
@@ -69,7 +70,20 @@ public class RaycasterDoorController : MonoBehaviour
                     EventDispatcher.Publish(new OpenDoorEvent()
                     {
                         DoorName = "REAR_RIGHT_DOOR"
-                    }, false);
+                    }, true);
+                }
+                else if (hit.collider == tailDoor)
+                {
+                    Debug.Log("tail door");
+                    if (!_mazdaData.IsCursorOnTailDoor) return;
+                    EventDispatcher.Publish(new OpenDoorEvent()
+                    {
+                        DoorName = "TAIL_DOOR"
+                    }, true);
+                }
+                else
+                {
+                    Debug.Log(hit.collider.name, gameObject);
                 }
                 
             }

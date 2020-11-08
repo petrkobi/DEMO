@@ -41,6 +41,8 @@ namespace vrtp_demo.Scripts.DragRotation
                 float x = Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime;
                 rb.AddTorque(Vector3.down * x);
             }
+            
+            rb.transform.eulerAngles = new Vector3(0,rb.transform.eulerAngles.y, 0);
         }
     }
 }
