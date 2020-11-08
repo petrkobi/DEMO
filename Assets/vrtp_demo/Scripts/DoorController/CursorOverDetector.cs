@@ -4,6 +4,7 @@ using UniRx;
 using UnityEngine;
 using UnityFx.Outline;
 using vrtp_demo.Scripts.UI;
+using vrtp_demo.Scripts.UI.ScriptableObjects;
 
 namespace vrtp_demo.Scripts.DoorController
 {
@@ -49,6 +50,7 @@ namespace vrtp_demo.Scripts.DoorController
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out hit, 100.0f))
                     {
+                        //if (_windowDataStatus.WindowStatus == Constants.WindowStatusColorPicker) return;
                         if (_windowDataStatus.Window == WindowDataStatus.WindowStatus.ColorPickerWindow) return;
                     
                         hitCount++;

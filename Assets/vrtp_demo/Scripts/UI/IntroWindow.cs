@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using vrtp_demo.Scripts.UI.Events;
+using vrtp_demo.Scripts.UI.ScriptableObjects;
 using Button = UnityEngine.UI.Button;
 using EventDispatcher = vrtp_demo.Scripts.Common.Events.EventDispatcher;
 using Image = UnityEngine.UI.Image;
@@ -25,6 +26,7 @@ namespace vrtp_demo.Scripts.UI
         private void Start()
         {
             enterMainViewButton.onClick.AddListener(OnClickEnterMainViewButton);
+            //_windowDataStatus.WindowStatus = Constants.WindowStatusIntro;
             _windowDataStatus.Window = WindowDataStatus.WindowStatus.Intro;
 
             /*

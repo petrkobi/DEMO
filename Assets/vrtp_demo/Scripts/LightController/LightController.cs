@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using vrtp_demo.Scripts.UI;
+using vrtp_demo.Scripts.UI.ScriptableObjects;
 
 public class LightController : MonoBehaviour
 {

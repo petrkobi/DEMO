@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using vrtp_demo.Scripts.Common.Events;
 using vrtp_demo.Scripts.UI;
 using vrtp_demo.Scripts.UI.Events;
+using vrtp_demo.Scripts.UI.ScriptableObjects;
 
 public class UIController : MonoBehaviour
 {

@@ -1,6 +1,7 @@
 ﻿using HSVPicker;
 using UnityEngine;
 using vrtp_demo.Scripts.UI;
+using vrtp_demo.Scripts.UI.ScriptableObjects;
 
 namespace vrtp_demo.Scripts.DragRotation
 {
@@ -36,6 +37,7 @@ namespace vrtp_demo.Scripts.DragRotation
         {
             if (isDragging)
             {
+                //if (_windowDataStatus.WindowStatus == Constants.WindowStatusColorPicker) return;
                 if (_windowDataStatus.Window == WindowDataStatus.WindowStatus.ColorPickerWindow) return;
                 
                 float x = Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime;

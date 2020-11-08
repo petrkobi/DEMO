@@ -2,10 +2,12 @@
 using HSVPicker;
 using UnityEngine;
 using UnityEngine.UI;
+using vrtp_demo.Scripts;
 using vrtp_demo.Scripts.ColorPickerWindow.Events;
 using vrtp_demo.Scripts.DoorController;
 using vrtp_demo.Scripts.UI;
 using vrtp_demo.Scripts.UI.Events;
+using vrtp_demo.Scripts.UI.ScriptableObjects;
 using Button = UnityEngine.UI.Button;
 using EventDispatcher = vrtp_demo.Scripts.Common.Events.EventDispatcher;
 
@@ -29,7 +31,9 @@ public class ColorPickerWindow : MonoBehaviour
 
     private void OnEnable()
     {
+        //_windowDataStatus.WindowStatus = Constants.WindowStatusColorPicker;
         _windowDataStatus.Window = WindowDataStatus.WindowStatus.ColorPickerWindow;
+        
         gameObject.transform.SetAsFirstSibling();
         //canvasGroup.alpha = 0;
         //canvasGroup.DOFade(1, 0.5f);

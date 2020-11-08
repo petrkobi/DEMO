@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 
-namespace vrtp_demo.Scripts.UI
+namespace vrtp_demo.Scripts.UI.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "WindowDataStatus", menuName = "Data/WindowDataStatus", order = 0)]
     public class WindowDataStatus : ScriptableObject
     {
+        
+        
         public enum WindowStatus
         {
             Intro,
@@ -13,8 +15,12 @@ namespace vrtp_demo.Scripts.UI
         }
 
         public WindowStatus Window;
+        
+
+        //public string WindowStatus;
 
 
+        
         public delegate void OnChangeDelegate(float value);
         public event OnChangeDelegate OnChange;
         public float lightIntensity;
@@ -27,5 +33,6 @@ namespace vrtp_demo.Scripts.UI
                 OnChange(lightIntensity);
             }
         }
+        
     }
 }

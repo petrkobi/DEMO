@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using vrtp_demo.Scripts.DoorController.Events;
 using vrtp_demo.Scripts.UI;
+using vrtp_demo.Scripts.UI.ScriptableObjects;
 using EventDispatcher = vrtp_demo.Scripts.Common.Events.EventDispatcher;
 
 namespace vrtp_demo.Scripts.DoorController
@@ -29,6 +30,7 @@ namespace vrtp_demo.Scripts.DoorController
         {
             if ( Input.GetMouseButtonDown(0))
             { 
+                //if (_windowDataStatus.WindowStatus == Constants.WindowStatusColorPicker) return;
                 if (_windowDataStatus.Window == WindowDataStatus.WindowStatus.ColorPickerWindow) return;
             
                 RaycastHit hit;

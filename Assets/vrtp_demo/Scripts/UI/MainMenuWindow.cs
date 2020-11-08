@@ -1,11 +1,10 @@
 ﻿using DG.Tweening;
-using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.UI;
 using vrtp_demo.Scripts.Common.Events;
-using vrtp_demo.Scripts.DoorController;
 using vrtp_demo.Scripts.DoorController.Events;
 using vrtp_demo.Scripts.UI.Events;
+using vrtp_demo.Scripts.UI.ScriptableObjects;
 
 namespace vrtp_demo.Scripts.UI
 {
@@ -99,7 +98,9 @@ namespace vrtp_demo.Scripts.UI
         private void OnEnable()
         {
             gameObject.transform.SetAsFirstSibling();
+            //_windowDataStatus.WindowStatus = Constants.WindowStatusMainMenu;
             _windowDataStatus.Window = WindowDataStatus.WindowStatus.MainView;
+            
             colorPickerGroupBtn.alpha = 0;
             
             colorPickerGroupBtn.DOFade(1, 1f);
