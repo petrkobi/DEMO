@@ -1,6 +1,4 @@
-﻿using HSVPicker;
-using UnityEngine;
-using vrtp_demo.Scripts.UI;
+﻿using UnityEngine;
 using vrtp_demo.Scripts.UI.ScriptableObjects;
 
 namespace vrtp_demo.Scripts.DragRotation

@@ -13,9 +13,5 @@
         public static string ANIMATOR_REAR_LEFT_DOOR_OPEN = "is_RearLeft_door_open";
         public static string ANIMATOR_REAR_RIGHT_DOOR_OPEN = "is_RearRight_door_open";
         public static string ANIMTOAR_TAIL_DOOR_OPEN = "is_Tail_door_open";
-
-        public static string WindowStatusIntro = "Intro";
-        public static string WindowStatusMainMenu = "MainMenu";
-        public static string WindowStatusColorPicker = "ColorPicker";
     }
 }

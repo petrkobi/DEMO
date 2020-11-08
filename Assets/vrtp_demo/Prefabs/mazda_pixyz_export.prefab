@@ -5081,6 +5081,7 @@ MonoBehaviour:
   - {fileID: 4234170544740258144}
   - {fileID: 4234170544740257938}
   - {fileID: 4234170544740258156}
+  _mazdaData: {fileID: 11400000, guid: f507db92b88b1cc44b02ac3112dddba4, type: 2}
 --- !u!114 &418379449598950414
 MonoBehaviour:
   m_ObjectHideFlags: 0
