@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using vrtp_demo.Scripts.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -12,11 +13,16 @@ public class UIController : MonoBehaviour
     [Header("Window")] 
     [SerializeField] private GameObject colorPickerWindow;
 
+
+    [Header("Data")]
+    [SerializeField] private WindowDataStatus _windowDataStatus;
+
     private GameObject colorPicerWindowSpawn;
     
     private void Start()
     {
         changeColorButton.onClick.AddListener(OnClickChangeColorButton);
+        _windowDataStatus.Window = WindowDataStatus.WindowStatus.MainView;
     }
 
     private void OnClickChangeColorButton()

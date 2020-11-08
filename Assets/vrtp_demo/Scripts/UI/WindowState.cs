@@ -2,9 +2,15 @@
 
 namespace vrtp_demo.Scripts.UI
 {
-    [CreateAssetMenu(fileName = "FILENAME", menuName = "MENUNAME", order = 0)]
-    public class WindowState : ScriptableObject
+    [CreateAssetMenu(fileName = "WindowDataStatus", menuName = "Data/WindowDataStatus", order = 0)]
+    public class WindowDataStatus : ScriptableObject
     {
-        
+        public enum WindowStatus
+        {
+            MainView,
+            ColorPickerWindow
+        }
+
+        public WindowStatus Window;
     }
 }

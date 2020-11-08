@@ -1460,6 +1460,7 @@ MonoBehaviour:
   changeColorButton: {fileID: 740486436}
   colorPickerWindow: {fileID: 7672732365239328414, guid: b795b695bc36ac74b9ff36b5b7a4fcc7,
     type: 3}
+  _windowDataStatus: {fileID: 11400000, guid: eea320209696fc54e80cd3e7cf3c975e, type: 2}
 --- !u!1 &1171768403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4234170544738058756, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
@@ -1872,26 +1873,6 @@ PrefabInstance:
       propertyPath: frontLeftDoorMeshList.Array.data[1]
       value: 
       objectReference: {fileID: 370133154}
-    - target: {fileID: 418379449598950414, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
-        type: 3}
-      propertyPath: activeColor.r
-      value: 0.24827407
-      objectReference: {fileID: 0}
-    - target: {fileID: 418379449598950414, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
-        type: 3}
-      propertyPath: activeColor.g
-      value: 0.8584906
-      objectReference: {fileID: 0}
-    - target: {fileID: 418379449598950414, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
-        type: 3}
-      propertyPath: activeColor.b
-      value: 0.16602883
-      objectReference: {fileID: 0}
-    - target: {fileID: 418379449598950414, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
-        type: 3}
-      propertyPath: activeColor.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 418379449598950414, guid: 87ad90a25f8c8d64692e0ad3075c9f15,
         type: 3}
       propertyPath: frontRightDoorMeshList.Array.data[2]
@@ -2970,12 +2951,12 @@ PrefabInstance:
     - target: {fileID: 7534508203457366149, guid: b795b695bc36ac74b9ff36b5b7a4fcc7,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -127.90973
+      value: 127.90973
       objectReference: {fileID: 0}
     - target: {fileID: 7534508203457366149, guid: b795b695bc36ac74b9ff36b5b7a4fcc7,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -80
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7534508203457368097, guid: b795b695bc36ac74b9ff36b5b7a4fcc7,
         type: 3}

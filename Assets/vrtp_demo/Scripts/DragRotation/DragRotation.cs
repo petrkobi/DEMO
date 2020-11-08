@@ -1,10 +1,15 @@
-﻿using UnityEngine;
+﻿using HSVPicker;
+using UnityEngine;
+using vrtp_demo.Scripts.UI;
 
 namespace vrtp_demo.Scripts.DragRotation
 {
     public class DragRotation : MonoBehaviour
     {
         [SerializeField] private float rotationSpeed = 100f;
+
+        [Header("Data")]
+        [SerializeField] private WindowDataStatus _windowDataStatus;
 
         private bool isDragging = false;
         private Rigidbody rb;
@@ -31,6 +36,8 @@ namespace vrtp_demo.Scripts.DragRotation
         {
             if (isDragging)
             {
+                if (_windowDataStatus.Window == WindowDataStatus.WindowStatus.ColorPickerWindow) return;
+                
                 float x = Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime;
                 rb.AddTorque(Vector3.down * x);
             }

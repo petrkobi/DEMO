@@ -22,16 +22,17 @@ public class CursorOverDetector : MonoBehaviour
     [SerializeField] private List<OutlineBehaviour> rearLeftDoorMeshList = new List<OutlineBehaviour>();
     [SerializeField] private List<OutlineBehaviour> rearRightDoorMeshList = new List<OutlineBehaviour>();
 
+    [Header("Colors")]
     [SerializeField] private Color activeColor;
     [SerializeField] private Color unActiveColor;
 
 
     [Header("Data")] [SerializeField] private MazdaData _mazdaData;
-    // Start is called before the first frame update
+    
     void Start()
     {
        //Observable.Interval(TimeSpan.FromSeconds(0.5))
-       Observable.IntervalFrame(60)
+       Observable.IntervalFrame(30)
            .Subscribe(_ =>
             {
                 RaycastHit hit;
@@ -40,7 +41,6 @@ public class CursorOverDetector : MonoBehaviour
                 {
                     if (hit.collider == frontLeftDoor)
                     {
-                        Debug.Log("Left Door");
                         _mazdaData.IsCursorOnFrontLeftDoor = true;
                         SetColorToObject(frontLeftDoorMeshList, activeColor);
                     }

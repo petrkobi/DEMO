@@ -14,9 +14,9 @@ namespace vrtp_demo.Scripts.Common.Events
             MessageBroker.Default.Publish(eventData);
         }
         
-        public static void Publish<T>(T eventData, bool silent) where T : AbstractEvent
+        public static void Publish<T>(T eventData, bool logInfo) where T : AbstractEvent
         {
-            if(silent)
+            if(logInfo)
                 Debug.Log("<color=#ffa500ff>Event: </color>" + eventData.GetType() + eventData.LogInfo());        
 
             MessageBroker.Default.Publish(eventData);
