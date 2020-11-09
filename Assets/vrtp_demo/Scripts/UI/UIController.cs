@@ -1,51 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UniRx;
+﻿using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using vrtp_demo.Scripts.Common.Events;
-using vrtp_demo.Scripts.UI;
 using vrtp_demo.Scripts.UI.Events;
-using vrtp_demo.Scripts.UI.ScriptableObjects;
 
-public class UIController : MonoBehaviour
+namespace vrtp_demo.Scripts.UI
 {
-
-    [SerializeField] private Canvas canvas;
-    [SerializeField] private Button changeColorButton;
-    
-    [Header("Window")] 
-    [SerializeField] private GameObject colorPickerWindow;
-    [SerializeField] private GameObject mainMenuWindow;
-
-
-    [Header("Data")]
-    [SerializeField] private WindowDataStatus _windowDataStatus;
-
-    private GameObject colorPicerWindowSpawn;
-    
-    private void Start()
+    public class UIController : MonoBehaviour
     {
-        //changeColorButton.onClick.AddListener(OnClickChangeColorButton);
-        //_windowDataStatus.Window = WindowDataStatus.WindowStatus.MainView;
+        [SerializeField] private Canvas canvas;
+        [SerializeField] private Button changeColorButton;
+    
+        [Header("Window")] 
+        [SerializeField] private GameObject colorPickerWindow;
+        [SerializeField] private GameObject mainMenuWindow;
 
-        EventDispatcher.Receive<RequestColorPickerWindowEvent>()
-            .Subscribe(_ =>
-            {
-                Instantiate(colorPickerWindow, canvas.transform);
-            });
+        private void Start()
+        {
+            //When Receive Request for ColorPickerWindow -> Instantiate ColorPickerWindow under Canvas
+            EventDispatcher.Receive<RequestColorPickerWindowEvent>()
+                .Subscribe(_ =>
+                {
+                    Instantiate(colorPickerWindow, canvas.transform);
+                });
 
-        EventDispatcher.Receive<RequestMainWindowEvent>()
-            .Subscribe(_ =>
-            {
-                Instantiate(mainMenuWindow, canvas.transform);
-            });
+            //When Receive Request for MainWindow -> Instantiate MainWindow under Canvas
+            EventDispatcher.Receive<RequestMainWindowEvent>()
+                .Subscribe(_ =>
+                {
+                    Instantiate(mainMenuWindow, canvas.transform);
+                });
+        }
+        
     }
-
-    private void OnClickChangeColorButton()
-    {
-       colorPicerWindowSpawn = Instantiate(colorPickerWindow, canvas.transform);
-    }
-
-
 }

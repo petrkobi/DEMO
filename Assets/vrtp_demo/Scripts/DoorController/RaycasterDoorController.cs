@@ -28,6 +28,7 @@ namespace vrtp_demo.Scripts.DoorController
     
         private void Update()
         {
+            // Detection with ray if ray hit Collider, then send Event, what's hit
             if ( Input.GetMouseButtonDown(0))
             {
                 if (_windowDataStatus.Window == WindowDataStatus.WindowStatus.ColorPickerWindow) return;
@@ -39,42 +40,27 @@ namespace vrtp_demo.Scripts.DoorController
                     if (hit.collider == frontLeftDoor)
                     {
                         if (!_mazdaData.IsCursorOnFrontLeftDoor) return;
-                        EventDispatcher.Publish(new OpenDoorEvent()
-                        {
-                            DoorName = Constants.FRONT_LEFT_DOOR
-                        }, false);
+                        EventDispatcher.Publish(new OpenDoorEvent() {DoorName = Constants.FRONT_LEFT_DOOR}, false);
                     }
                     else if (hit.collider == frontRightDoor)
                     {
                         if (!_mazdaData.IsCursorOnFrontRightDoor) return;
-                        EventDispatcher.Publish(new OpenDoorEvent()
-                        {
-                            DoorName = Constants.FRONT_RIGHT_DOOR
-                        }, false);
+                        EventDispatcher.Publish(new OpenDoorEvent() {DoorName = Constants.FRONT_RIGHT_DOOR}, false);
                     }
                     else if (hit.collider == rearLeftDoor)
                     {
                         if (!_mazdaData.IsCursorOnRearLeftDoor) return;
-                        EventDispatcher.Publish(new OpenDoorEvent()
-                        {
-                            DoorName = Constants.REAR_LEFT_DOOR
-                        }, false);
+                        EventDispatcher.Publish(new OpenDoorEvent() {DoorName = Constants.REAR_LEFT_DOOR}, false);
                     }
                     else if (hit.collider == rearRightDoor)
                     {
                         if (!_mazdaData.IsCursorOnRearRightDoor) return;
-                        EventDispatcher.Publish(new OpenDoorEvent()
-                        {
-                            DoorName = Constants.REAR_RIGHT_DOOR
-                        }, false);
+                        EventDispatcher.Publish(new OpenDoorEvent() {DoorName = Constants.REAR_RIGHT_DOOR}, false);
                     }
                     else if (hit.collider == tailDoor)
                     {
                         if (!_mazdaData.IsCursorOnTailDoor) return;
-                        EventDispatcher.Publish(new OpenDoorEvent()
-                        {
-                            DoorName = Constants.TAIL_DOOR
-                        }, false);
+                        EventDispatcher.Publish(new OpenDoorEvent() {DoorName = Constants.TAIL_DOOR}, false);
                     }
                     else
                     {

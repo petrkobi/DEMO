@@ -14,6 +14,7 @@ public class LightController : MonoBehaviour
     
     private void Start()
     {
+        //Hook function for OnChane UnityEvent
         _windowDataStatus.OnChange += WindowDataStatusOnChange;
     }
 
@@ -22,6 +23,7 @@ public class LightController : MonoBehaviour
         _windowDataStatus.OnChange -= WindowDataStatusOnChange;
     }
 
+    //For all Light change light intensity
     private void WindowDataStatusOnChange(float value)
     {
         foreach (var light in garageLights)

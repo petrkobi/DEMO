@@ -20,9 +20,11 @@ namespace vrtp_demo.Scripts.DoorController
     
         private void Start()
         {
+            //Receive Event 
             EventDispatcher.Receive<OpenDoorEvent>().Subscribe(OnDoorEvent);
         }
 
+        //Receive Event check the parameter, which door are selected
         private void OnDoorEvent(OpenDoorEvent e)
         {
             switch (e.DoorName)
@@ -30,12 +32,16 @@ namespace vrtp_demo.Scripts.DoorController
                 case "FRONT_LEFT_DOOR":
                     if (_mazdaData.IsFrontLeftDoorOpen)
                     {
+                        //Close door -> set bool at animator
                         animator_frontLeftDoor.SetBool(Constants.ANIMATOR_FRONT_LEFT_DOOR_OPEN, false);
+                        //Send Event for play sound
                         EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = false }, false);
                     }
                     else
                     {
+                        //Open door -> set bool at animator
                         animator_frontLeftDoor.SetBool(Constants.ANIMATOR_FRONT_LEFT_DOOR_OPEN, true);
+                        //Send Event for play sound
                         EventDispatcher.Publish(new PlayDoorSoundEvent(){ IsPlayOpenSound = true },false);
                     }
                     _mazdaData.IsFrontLeftDoorOpen = !_mazdaData.IsFrontLeftDoorOpen;

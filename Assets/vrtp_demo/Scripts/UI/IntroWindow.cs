@@ -26,15 +26,18 @@ namespace vrtp_demo.Scripts.UI
         private void Start()
         {
             enterMainViewButton.onClick.AddListener(OnClickEnterMainViewButton);
-            //_windowDataStatus.WindowStatus = Constants.WindowStatusIntro;
+
+            //Set WindowStatus
             _windowDataStatus.Window = WindowDataStatus.WindowStatus.Intro;
 
+            //Prepare Sequence for Tween - not used now
             /*
             Sequence s = DOTween.Sequence();
             s.Append(infoMessage.transform.DOShakeScale(1, new Vector3(0.1f, 0.1f, 0),1, 90, true));
             s.SetLoops(-1, LoopType.Restart);
             */
 
+            //Sequence for Looping Tween virtuplex logo
             Sequence logoSeq = DOTween.Sequence();
             logoSeq.Append(virtuplexLogo.DOFade(0.1f, 1f));
             logoSeq.SetLoops(-1, LoopType.Yoyo);
@@ -43,8 +46,11 @@ namespace vrtp_demo.Scripts.UI
     
         private void OnClickEnterMainViewButton()
         {
+            //Send Event for FadeInOut
             EventDispatcher.Publish(new RequestFadeInAndOutEvent(),false);
+            //Send Event for Request Main Window
             EventDispatcher.Publish(new RequestMainWindowEvent(),false);
+            //Destroy this Intro window
             Destroy(gameObject,0.5f);
         }
     }

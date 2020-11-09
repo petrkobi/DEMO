@@ -17,8 +17,10 @@ public class ColorChange : MonoBehaviour
 
     private void Start()
     {
+        //Set "tmp" init - first color in SO MazdaData
         _mazdaData.MazdaColor = carCaseList[0].material.color;
         
+        //When receive Event - set all parts to color;
         EventDispatcher.Receive<ChangeColorEvent>()
             .Subscribe(e =>
             {

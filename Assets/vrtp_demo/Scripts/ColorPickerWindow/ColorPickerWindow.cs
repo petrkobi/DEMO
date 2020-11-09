@@ -22,40 +22,44 @@ namespace vrtp_demo.Scripts.ColorPickerWindow
         [SerializeField] private MazdaData _mazdaData;
         [SerializeField] private WindowDataStatus _windowDataStatus;
     
+        
         private void Start()
         {
-            //canvasGroup.alpha = 0;
             colorPicker.CurrentColor = _mazdaData.MazdaColor;
             saveColorButton.onClick.AddListener(OnClickSaveColorButton);
         }
 
+        //When Window spawns
         private void OnEnable()
         {
-            //_windowDataStatus.WindowStatus = Constants.WindowStatusColorPicker;
+            //Set WindowStatus
             _windowDataStatus.Window = WindowDataStatus.WindowStatus.ColorPickerWindow;
         
+            //Set as first sibling under Canvas, always visibility
             gameObject.transform.SetAsFirstSibling();
-            //canvasGroup.alpha = 0;
-            //canvasGroup.DOFade(1, 0.5f);
+            
+            //Start smooth Tween
             backgroundImage.DOColor(new Color(0, 0, 0, 0.7f), 0.5f);
         }
 
         private void OnClickSaveColorButton()
         {
+            //Send ChangeColorEvent with selected color
             EventDispatcher.Publish(new ChangeColorEvent()
             {
                 ChangeColor = colorPicker.CurrentColor
             }, false);
 
             _mazdaData.MazdaColor = colorPicker.CurrentColor;
-
             colorPicker.gameObject.SetActive(false);
-            //gameObject.transform.DOScale(new Vector3(0,0,0),0.5f).OnComplete(OnColorPickerWindowClosed);
+            
+            //Start sooth Tween
             backgroundImage.DOColor(new Color(0, 0, 0, 0.0f), 0.3f).OnComplete(OnColorPickerWindowClosed);
         }
 
         private void OnColorPickerWindowClosed()
         {
+            //Request Main Window
             EventDispatcher.Publish(new RequestMainWindowEvent(), false);
             Destroy(gameObject);
         }

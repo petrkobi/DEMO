@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 using UnityFx.Outline;
-using vrtp_demo.Scripts.UI;
 using vrtp_demo.Scripts.UI.ScriptableObjects;
 
 namespace vrtp_demo.Scripts.DoorController
 {
+    /// <summary>
+    ///  Detection if cursor is on the same collider, for specific time. At least two hits in one Collider for selected Door.
+    /// </summary>
     public class CursorOverDetector : MonoBehaviour
     {
     
@@ -35,24 +37,30 @@ namespace vrtp_demo.Scripts.DoorController
         [SerializeField] private MazdaData _mazdaData;
         [SerializeField] private WindowDataStatus _windowDataStatus;
 
+        private Camera camera;
+
         private Transform hit1;
         private Transform hit2;
 
-        public int hitCount;
+        private int hitCount;
     
-        void Start()
+        private void Start()
         {
+            camera = Camera.main;
+            
+            //Run Interval over 1/2 seconds -> "Cast Ray" ->
             Observable.Interval(TimeSpan.FromSeconds(0.5))
                 //Observable.IntervalFrame(30)
                 .Subscribe(_ =>
                 {
                     RaycastHit hit;
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    Ray ray = camera.ScreenPointToRay(Input.mousePosition);
                     if (Physics.Raycast(ray, out hit, 100.0f))
                     {
-                        //if (_windowDataStatus.WindowStatus == Constants.WindowStatusColorPicker) return;
+                        //when we are in ColorPicker return
                         if (_windowDataStatus.Window == WindowDataStatus.WindowStatus.ColorPickerWindow) return;
                     
+                        //store first and second hit
                         hitCount++;
                         if (hitCount % 2 == 0)
                         {
@@ -63,7 +71,7 @@ namespace vrtp_demo.Scripts.DoorController
                             hit2 = hit.collider.transform;
                         }
 
-                        //both Rays on same Collider?
+                        //If two hit collider aren't same RETURN - user move with cursor
                         if (hit1 != hit2)
                         {
                             _mazdaData.IsCursorOnFrontLeftDoor = false;
@@ -74,15 +82,18 @@ namespace vrtp_demo.Scripts.DoorController
                         
                             return;
                         }
-                    
+                        
+                        //if make HIT
                         if (hit.collider == frontLeftDoor)
                         {
                             _mazdaData.IsCursorOnFrontLeftDoor = true;
+                            //Set Color ACTIVE for all parts in List
                             SetColorToObject(frontLeftDoorMeshList, activeColor);
                         }
                         else
                         {
                             _mazdaData.IsCursorOnFrontLeftDoor = false;
+                            //If not, set Color UN-ACTIVE for all parts in list
                             SetColorToObject(frontLeftDoorMeshList, unActiveColor);
                         }
                     
@@ -138,7 +149,7 @@ namespace vrtp_demo.Scripts.DoorController
                     }
                     else
                     {
-
+                        // null, and reset
                         hit1 = null;
                         hit2 = null;
 

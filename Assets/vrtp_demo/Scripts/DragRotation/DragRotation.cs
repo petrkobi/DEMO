@@ -3,6 +3,10 @@ using vrtp_demo.Scripts.UI.ScriptableObjects;
 
 namespace vrtp_demo.Scripts.DragRotation
 {
+    /// <summary>
+    ///  Dragging Mazda with Mouse, used Physics dragging, for really nice ending easing
+    ///  When Tail-door is open, mixed rotation axis/forces to car, set Rotation to (0,Y,0)
+    /// </summary>
     public class DragRotation : MonoBehaviour
     {
         [SerializeField] private float rotationSpeed = 100f;
@@ -12,8 +16,8 @@ namespace vrtp_demo.Scripts.DragRotation
 
         private bool isDragging = false;
         private Rigidbody rb;
-
-        void Start()
+        
+        private void Start()
         {
             rb = gameObject.GetComponent<Rigidbody>();
         }
@@ -35,7 +39,6 @@ namespace vrtp_demo.Scripts.DragRotation
         {
             if (isDragging)
             {
-                //if (_windowDataStatus.WindowStatus == Constants.WindowStatusColorPicker) return;
                 if (_windowDataStatus.Window == WindowDataStatus.WindowStatus.ColorPickerWindow) return;
                 
                 float x = Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime;

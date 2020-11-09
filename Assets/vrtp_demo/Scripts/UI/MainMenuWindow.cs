@@ -46,47 +46,50 @@ namespace vrtp_demo.Scripts.UI
 
         private void OnLightIntensityChangeSlider(float arg0)
         {
+            //SetValue to WindowStatus 
             _windowDataStatus.SetValue(arg0);
         }
+        
+        //When Window spawns
+        private void OnEnable()
+        {
+            //Set as first under Canvas
+            gameObject.transform.SetAsFirstSibling();
+            
+            //Set WindowStatus
+            _windowDataStatus.Window = WindowDataStatus.WindowStatus.MainView;
+            
+            //Set aplha 0 for all buttons
+            colorPickerGroupBtn.alpha = 0;
+            
+            //Start smooth Tween for show-up buttons
+            colorPickerGroupBtn.DOFade(1, 1f);
+        }
 
+        //Button Events
         private void OnClickTailDoorButton()
         {
-            EventDispatcher.Publish(new OpenDoorEvent()
-            {
-                DoorName = Constants.TAIL_DOOR
-            }, false);
+            EventDispatcher.Publish(new OpenDoorEvent() {DoorName = Constants.TAIL_DOOR}, false);
         }
 
         private void OnClickRearRightDoorButton()
         {
-            EventDispatcher.Publish(new OpenDoorEvent()
-            {
-                DoorName = Constants.REAR_RIGHT_DOOR
-            }, false);
+            EventDispatcher.Publish(new OpenDoorEvent() {DoorName = Constants.REAR_RIGHT_DOOR}, false);
         }
 
         private void OnClickRearLeftDoorButton()
         {
-            EventDispatcher.Publish(new OpenDoorEvent()
-            {
-                DoorName = Constants.REAR_LEFT_DOOR
-            }, false);
+            EventDispatcher.Publish(new OpenDoorEvent() {DoorName = Constants.REAR_LEFT_DOOR}, false);
         }
 
         private void OnClickFrontRightDoorButton()
         {
-            EventDispatcher.Publish(new OpenDoorEvent()
-            {
-                DoorName = Constants.FRONT_RIGHT_DOOR
-            }, false);
+            EventDispatcher.Publish(new OpenDoorEvent() {DoorName = Constants.FRONT_RIGHT_DOOR}, false);
         }
 
         private void OnClickFrontLeftDoorButton()
         {
-           EventDispatcher.Publish(new OpenDoorEvent()
-           {
-               DoorName = Constants.FRONT_LEFT_DOOR
-           }, false);
+           EventDispatcher.Publish(new OpenDoorEvent() {DoorName = Constants.FRONT_LEFT_DOOR}, false);
         }
 
         private void OnClickColorPickerButton()
@@ -94,16 +97,6 @@ namespace vrtp_demo.Scripts.UI
             EventDispatcher.Publish(new RequestColorPickerWindowEvent(), false);
             Destroy(gameObject);
         }
-
-        private void OnEnable()
-        {
-            gameObject.transform.SetAsFirstSibling();
-            //_windowDataStatus.WindowStatus = Constants.WindowStatusMainMenu;
-            _windowDataStatus.Window = WindowDataStatus.WindowStatus.MainView;
-            
-            colorPickerGroupBtn.alpha = 0;
-            
-            colorPickerGroupBtn.DOFade(1, 1f);
-        }
+        
     }
 }

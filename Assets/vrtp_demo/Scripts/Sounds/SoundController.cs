@@ -17,6 +17,7 @@ public class SoundController : MonoBehaviour
             .Subscribe(PlayDoorSoundEvent);
     }
 
+    //Play Sound after receive Event
     private void PlayDoorSoundEvent(PlayDoorSoundEvent e)
     {
         if (e.IsPlayOpenSound)
