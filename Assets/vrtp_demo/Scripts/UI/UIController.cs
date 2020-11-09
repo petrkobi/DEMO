@@ -9,8 +9,7 @@ namespace vrtp_demo.Scripts.UI
     public class UIController : MonoBehaviour
     {
         [SerializeField] private Canvas canvas;
-        [SerializeField] private Button changeColorButton;
-    
+
         [Header("Window")] 
         [SerializeField] private GameObject colorPickerWindow;
         [SerializeField] private GameObject mainMenuWindow;
